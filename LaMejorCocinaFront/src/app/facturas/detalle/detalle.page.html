@@ -1,0 +1,118 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">      
+      <ion-back-button></ion-back-button>     
+    </ion-buttons>    
+    <ion-buttons slot="end">      
+      <ion-button *ngIf="modo != 0" (click)="confirmarEliminacion()">
+        <ion-icon name="trash"></ion-icon> 
+      </ion-button>
+      <ion-menu-button></ion-menu-button>     
+    </ion-buttons>    
+    <ion-title>Factura</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>    
+    <ion-card>
+      <form (ngSubmit)="enviarForm()" [formGroup]="facturaForm">    
+      <ion-row>
+        <ion-col>         
+          <ion-item>
+            <ion-label >Fecha</ion-label>
+            <ion-datetime value="Fecha" required="true" formControlName="Fecha" displayFormat="DD/MM/YYYY" placeholder="Seleccionar fecha"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>          
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Camarero</ion-label>
+            <ion-select value="IdCamarero" interface="action-sheet" formControlName="IdCamarero">
+              <ion-select-option *ngFor="let camarero of camareros" [value]="camarero.IdCamarero">{{camarero.Apellido1}} {{camarero.Nombres}}</ion-select-option>              
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label  position="floating">Mesa</ion-label>
+            <ion-select value="IdMesa" interface="action-sheet" formControlName="IdMesa">
+              <ion-select-option *ngFor="let mesa of mesas" [value]="mesa.IdMesa">{{mesa.Ubicacion}}</ion-select-option>              
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label  position="floating">Cliente</ion-label>
+            <ion-select value="IdCliente" interface="action-sheet" formControlName="IdCliente" >
+              <ion-select-option *ngFor="let cliente of clientes" [value]="cliente.IdCliente">{{cliente.Apellido1}} {{cliente.Nombres}}</ion-select-option>              
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>   
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Total:</ion-label>
+            <ion-input type="text" [disabled]="true" formControlName="Total" ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </form>
+    </ion-card>       
+    <ion-card>    
+    </ion-card>  
+    <ion-card *ngFor="let detalle of detalles">     
+      <ion-card-header>
+        <ion-item>          
+          <ion-button slot="end" (click)="confirmarEliminacionDetalle(detalle)" size="small">
+            <ion-icon name="trash"></ion-icon> 
+          </ion-button>
+        </ion-item> 
+      </ion-card-header>      
+     <form [formGroup]="detalle">    
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label  position="floating">Cocinero</ion-label>
+              <ion-select value="IdCocinero" interface="action-sheet" formControlName="IdCocinero" >
+                <ion-select-option *ngFor="let cocinero of cocineros" [value]="cocinero.IdCocinero">{{cocinero.Apellido1}} {{cocinero.Nombres}}</ion-select-option>              
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">Importe</ion-label>
+              <ion-input formControlName="Importe" type="text" placeholder="'$'" ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">Plato</ion-label>
+              <ion-textarea formControlName="Plato" ></ion-textarea>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-card>     
+    <ion-row>
+      <ion-col>
+        <ion-button type="button" (click)="enviarForm()" expand="full" color="tertiary" [disabled]="!validarForms()">Guardar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="onAgregarDetalle()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

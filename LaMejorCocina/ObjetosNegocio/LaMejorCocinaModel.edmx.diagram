@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bbf822e375fa4852b020980650783c7d" Name="Diagram1">
+        <EntityTypeShape EntityType="LaMejorCocinaModel.Camarero" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaMejorCocinaModel.Cliente" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaMejorCocinaModel.Cocinero" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaMejorCocinaModel.DetalleFactura" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaMejorCocinaModel.Factura" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaMejorCocinaModel.Mesa" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <AssociationConnector Association="LaMejorCocinaModel.FK_Factura_Camarero" ManuallyRouted="false" />
+        <AssociationConnector Association="LaMejorCocinaModel.FK_Factura_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="LaMejorCocinaModel.FK_DetalleFactura_Cocinero" ManuallyRouted="false" />
+        <AssociationConnector Association="LaMejorCocinaModel.FK_DetalleFactura_Factura" ManuallyRouted="false" />
+        <AssociationConnector Association="LaMejorCocinaModel.FK_Factura_Mesa" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

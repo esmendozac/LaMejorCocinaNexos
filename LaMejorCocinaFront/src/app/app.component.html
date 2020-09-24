@@ -1,0 +1,56 @@
+<ion-app>
+  <ion-split-pane contentId="main-content" color="tertiary">
+    <ion-menu contentId="main-content" type="overlay" background="tertiary" >
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-list-header><img src="https://archivosagenda.us-east-1.linodeobjects.com/Files/1/1/Attachments/4754d2f3-67c9-4d44-8668-72052d737b10.PNG"></ion-list-header>
+          <ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-item  [routerLink]="['/facturas']" lines="none" detail="true" >
+                <ion-icon slot="start" name="receipt-outline"></ion-icon>              
+                <ion-label>Facturas</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+            <ion-item  [routerLink]="['/clientes']" lines="none" detail="true" >
+              <ion-icon slot="start" name="people-circle-outline"></ion-icon>
+              <ion-label>Clientes</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item  [routerLink]="['/camareros']" lines="none" detail="true" >
+              <ion-icon slot="start"  name="man-outline"></ion-icon>
+              <ion-label>Camareros</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item  [routerLink]="['/cocineros']" lines="none" detail="true" >
+              <ion-icon slot="start" name="fast-food-outline"></ion-icon>
+              <ion-label>Cocineros</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item  [routerLink]="['/mesas']" lines="none" detail="true" >
+              <ion-icon slot="start" name="wine-outline"></ion-icon>
+              <ion-label>Mesas</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item  [routerLink]="['/reporte-clientes']" lines="none" detail="true" >
+              <ion-icon slot="start" name="file-tray-full-outline"></ion-icon>
+              <ion-label>Reporte clientes</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item  [routerLink]="['/reporte-camareros']" lines="none" detail="true" >
+              <ion-icon slot="start" name="file-tray-full-outline"></ion-icon>
+              <ion-label>Reporte camareros</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

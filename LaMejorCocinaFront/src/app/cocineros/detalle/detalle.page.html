@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">      
+      <ion-back-button></ion-back-button>     
+    </ion-buttons>    
+    <ion-buttons *ngIf="modo != 0" slot="end">      
+      <ion-button (click)="confirmarEliminacion()">
+        <ion-icon name="trash"></ion-icon> 
+      </ion-button>
+      <ion-menu-button></ion-menu-button>     
+    </ion-buttons>    
+    <ion-title>Cocinero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>    
+    <ion-card>
+      <form (ngSubmit)="enviarForm()" [formGroup]="cocineroForm">
+      
+      <!-- Fila -->
+      <ion-row>
+        <ion-col>         
+          <ion-item>
+            <ion-label position="floating">Nombres</ion-label>
+            <ion-input formControlName="Nombres" type="text" ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <!-- Fila -->
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Primer apellido</ion-label>
+            <ion-input formControlName="Apellido1" type="text" ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <!-- Fila -->
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Segundo apellido</ion-label>
+            <ion-input formControlName="Apellido2" type="text"  ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>      
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" expand="full" color="tertiary" [disabled]="!cocineroForm.valid">Guardar</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+    </ion-card>        
+  </ion-grid>
+</ion-content>

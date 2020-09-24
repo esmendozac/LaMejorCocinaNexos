@@ -1,0 +1,21 @@
+1.) Prueba de desarrollador C# IONIC
+
+Erik Steven Mendoza Cortés
+Telefono: 305-875-73-84
+
+Para la instalación correcta del código fuente:
+
+1.) En SQL Server 2019, ejecutar el script 'CreacionBaseDeDatos.sql' para crear la base de datos
+2.) Ejecutar 'ScriptTablasBaseDatos.sql' para crear la estructura completa de la abse de datos.
+    En caso de tener inconvenientes con el Login configurar asi:
+	 user: LaMejorCocinaUser password: 778899445566
+3.) Una vez se tenga la base de datos configurada se procede a clonar el código del siguiente repositorio: 
+	repo: https://github.com/esmendozac/LaMejorCocinaNexos
+4.)Tener en cuenta que la solucion (.sln) corresponde al backend y se abre con visual studio y la carpeta (LaMejorCocinaFront) corresponde al 
+    front end y se abre con visual studio code.
+5.)Una vez se abran los proyectos, es necesario tener instaladas las ultimas versiones de ionic 5 y angular cli asi como el soporte de .NetFramework para visual studio
+6.)Para configurar el backend es necesario verificar la cadena de conexión en el archivo web config. 
+7.)Una vez se tiene el backend funcionando correctamente se debe reemplazar en los servicios la url en la que la api funciona, de esta manera al servir la app de ionic 
+   estará listo para crear clientes, camareros, mesas, cocineros, facturas y verificar la funcionalidad de las consultas requeridas.
+
+Gracias.  

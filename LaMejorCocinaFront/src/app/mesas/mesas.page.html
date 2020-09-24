@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mesas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item *ngFor="let mesa of mesas" [routerLink]="['/mesas', mesa.IdMesa]"> 
+      <ion-avatar slot="start">
+        <img src="https://cdn.icon-icons.com/icons2/745/PNG/512/table_icon-icons.com_63570.png">
+      </ion-avatar>
+      <ion-label>
+        Mesa  {{mesa.Ubicacion}} para {{mesa.NumMaxComensales}} personas
+      </ion-label>
+      
+    </ion-item>
+  </ion-list>
+   <!-- fab placed to the (vertical) center and end -->
+   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="onCrearMesa()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
